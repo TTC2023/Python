@@ -16,3 +16,11 @@ def selectData(students: pd.DataFrame) -> pd.DataFrame:
 def createBonusColumn(employees: pd.DataFrame) -> pd.DataFrame:
     employees['bonus'] = employees['salary'] * 2
     return employees
+
+def dropDuplicateEmails(customers: pd.DataFrame) -> pd.DataFrame:
+    new_data = customers.drop_duplicates(subset='email')
+    return new_data
+
+def dropMissingData(students: pd.DataFrame) -> pd.DataFrame:
+    df_filtered = pd.DataFrame(students)[students['name'].notnull()]
+    return df_filtered
