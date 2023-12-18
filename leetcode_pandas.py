@@ -24,3 +24,7 @@ def dropDuplicateEmails(customers: pd.DataFrame) -> pd.DataFrame:
 def dropMissingData(students: pd.DataFrame) -> pd.DataFrame:
     df_filtered = pd.DataFrame(students)[students['name'].notnull()]
     return df_filtered
+
+def modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:
+    employees['salary'] = employees['salary'] * 2
+    return employees
